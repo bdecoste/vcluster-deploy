@@ -1,0 +1,46 @@
+apiVersion: storage.loft.sh/v1
+kind: VirtualClusterInstance
+metadata:
+  finalizers:
+  - loft.sh/cleanup
+  name: test
+  namespace: p-demo
+spec:
+  clusterRef:
+    cluster: loft-cluster
+    namespace: loft-demo-v-test
+    virtualCluster: test
+  displayName: test
+  networkPeer: true
+  owner:
+    user: admin
+  template:
+    accessPoint:
+      ingress: {}
+    helmRelease:
+      chart:
+        version: 0.24.1
+      values: |
+        sync:
+          toHost:
+            ingresses:
+              enabled: true
+        controlPlane:
+          coredns:
+            enabled: true
+            embedded: true
+          backingStore:
+            etcd:
+              embedded:
+                enabled: true
+        external:
+          platform:
+            autoSleep:
+              afterInactivity: 1800
+    instanceTemplate:
+      metadata: {}
+    metadata: {}
+    pro:
+      enabled: true
+    spaceTemplate:
+      metadata: {}

@@ -33,6 +33,10 @@ spec:
             etcd:
               embedded:
                 enabled: true
+          distro:
+            k8s:
+              enabled: true
+              version: v1.31.1
         external:
           platform:
             autoSleep:

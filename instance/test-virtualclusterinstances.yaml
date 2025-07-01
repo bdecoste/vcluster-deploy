@@ -40,7 +40,7 @@ spec:
         external:
           platform:
             autoSleep:
-              afterInactivity: 1800
+              afterInactivity: 3600
     instanceTemplate:
       metadata: {}
     metadata: {}

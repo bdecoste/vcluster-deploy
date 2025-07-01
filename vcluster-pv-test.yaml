@@ -16,6 +16,6 @@ spec:
   hostPath:
     path: /tmp/data-test-0
     type: DirectoryOrCreate
-  persistentVolumeReclaimPolicy: Retain
+  persistentVolumeReclaimPolicy: Delete
   storageClassName: "standard"
   volumeMode: Filesystem

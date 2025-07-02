@@ -37,10 +37,9 @@ spec:
             k8s:
               enabled: true
               version: v1.31.1
-        external:
-          platform:
-            autoSleep:
-              afterInactivity: 3600
+        sleepMode:
+          autoSleep:
+            afterInactivity: 3600
     instanceTemplate:
       metadata: {}
     metadata: {}

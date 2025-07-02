@@ -40,6 +40,10 @@ spec:
         sleepMode:
           autoSleep:
             afterInactivity: 3600s
+        external:
+          platform:
+            autoDelete:
+              afterInactivity: 600
     instanceTemplate:
       metadata: {}
     metadata: {}

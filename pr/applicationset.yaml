@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: vcluster-pr
+  namespace: argocd
+spec:
+  generators:
+  - pullRequest:
+      github:
+        owner: bdecoste
+        repo: vcluster-deploy  
+        labels:
+        - deploy
+  template:
+    metadata:
+      name: 'vcluster-{{branch}}-{{number}}'
+    spec:
+      source:
+        repoURL: git@github.com:bdecoste/vcluster-deploy.git
+        targetRevision: main
+        path: instance
+      project: demo
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: p-demo

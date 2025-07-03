@@ -31,9 +31,7 @@ spec:
                   value: '{{branch}}'
               target:
                 kind: VirtualClusterInstance
-                group: storage.loft.sh
                 name: test
-                namespace: p-demo
       project: demo
       destination:
         server: https://kubernetes.default.svc

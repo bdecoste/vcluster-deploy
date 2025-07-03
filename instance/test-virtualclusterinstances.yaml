@@ -3,6 +3,7 @@ kind: VirtualClusterInstance
 metadata:
   finalizers:
   - loft.sh/cleanup
+  labels: {}
   name: test
   namespace: p-demo
 spec:

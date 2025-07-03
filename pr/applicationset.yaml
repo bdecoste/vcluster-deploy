@@ -9,8 +9,6 @@ spec:
       github:
         owner: bdecoste
         repo: vcluster-deploy  
-        labels:
-        - deploy
   template:
     metadata:
       name: 'vcluster-{{branch}}-{{number}}'

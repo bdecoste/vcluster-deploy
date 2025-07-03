@@ -39,7 +39,7 @@ spec:
               version: v1.31.1
         sleepMode:
           autoSleep:
-            afterInactivity: 3600s
+            afterInactivity: 3599s
         external:
           platform:
             autoDelete:

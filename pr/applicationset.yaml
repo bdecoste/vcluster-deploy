@@ -29,11 +29,6 @@ spec:
                 - op: add
                   path: /metadata/labels/headBranch
                   value: '{{branch}}'
-              path: instance
-              target:
-                kind: VirtualClusterInstance
-                name: test
-                namespace: p-demo
       project: demo
       destination:
         server: https://kubernetes.default.svc

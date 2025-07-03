@@ -29,6 +29,7 @@ spec:
                 - op: add
                   path: /metadata/labels/headBranch
                   value: '{{branch}}'
+              path: instance
               target:
                 kind: VirtualClusterInstance
                 name: test

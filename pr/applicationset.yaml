@@ -16,7 +16,7 @@ spec:
       name: 'vcluster-{{branch}}-{{number}}'
     spec:
       source:
-        repoURL: git@github.com:bdecoste/vcluster-deploy.git
+        repoURL: https://github.com/bdecoste/vcluster-deploy.git
         targetRevision: main
         path: instance
       project: demo

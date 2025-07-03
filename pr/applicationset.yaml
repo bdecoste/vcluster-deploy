@@ -35,6 +35,7 @@ spec:
               target:
                 kind: VirtualClusterInstance
                 name: test
+                namespace: p-demo
       project: demo
       destination:
         server: https://kubernetes.default.svc

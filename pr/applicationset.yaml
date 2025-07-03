@@ -9,6 +9,8 @@ spec:
       github:
         owner: bdecoste
         repo: vcluster-deploy  
+        labels:
+        - deploy
   template:
     metadata:
       name: 'vcluster-{{branch}}-{{number}}'
@@ -17,6 +19,22 @@ spec:
         repoURL: https://github.com/bdecoste/vcluster-deploy.git
         targetRevision: main
         path: instance
+        kustomize:
+          namePrefix: test-pr-{{number}}-
+          patches:
+            - patch: |-
+                - op: add
+                  path: /metadata/labels/vclusterName
+                  value: test-pr-{{number}}-vcluster
+                - op: add
+                  path: /metadata/labels/prNumber
+                  value: '{{number}}'
+                - op: add
+                  path: /metadata/labels/headBranch
+                  value: '{{branch}}'
+              target:
+                kind: VirtualClusterInstance
+                name: test
       project: demo
       destination:
         server: https://kubernetes.default.svc

@@ -9,7 +9,6 @@ metadata:
 spec:
   clusterRef:
     cluster: loft-cluster
-    namespace: loft-demo-v-test
     virtualCluster: test
   displayName: test
   networkPeer: true

@@ -22,13 +22,22 @@ spec:
             - patch: |-
                 - op: add
                   path: /metadata/labels/vclusterName
-                  value: test-pr-{{number}}-vcluster
+                  value: 'test-pr-{{number}}'
                 - op: add
                   path: /metadata/labels/prNumber
                   value: '{{number}}'
                 - op: add
                   path: /metadata/labels/headBranch
                   value: '{{branch}}'
+                - op: replace
+                  path: /metadata/name
+                  value: 'test-pr-{{number}}'
+                - op: replace
+                  path: /spec/clusterRef/virtualCluster
+                  value: 'test-pr-{{number}}'
+                - op: replace
+                  path: /spec/displayName
+                  value: 'test-pr-{{number}}'
               target:
                 kind: VirtualClusterInstance
                 name: test
